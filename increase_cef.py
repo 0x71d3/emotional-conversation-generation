@@ -18,7 +18,7 @@ with open(src_path, encoding='utf-8') as f:
 
         for cases in permutations(bnst_midasis[:-1]):
             p_sentence = ''.join([*cases, bnst_midasis[-1]])
-            data.append((p_sentence, label))
+            data.append([p_sentence, label])
 
 with open(dst_path, 'w', encoding='utf-8') as f:
     f.write('\n'.join('\t'.join(line) for line in data) + '\n')
